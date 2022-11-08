@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_convert_heictojpg/common/views/home_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    home: HomeView(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

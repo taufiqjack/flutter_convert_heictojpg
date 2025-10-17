@@ -4,6 +4,19 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to save images and videos</string>
+	<key>UIBackgroundModes</key>
+	<array>
+   	<string>fetch</string>
+   	<string>remote-notification</string>
+	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Explain why your app uses music</string>
+	<key>UISupportsDocumentBrowser</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 	<key>CFBundleDisplayName</key>
 	<string>Flutter Convert Heictojpg</string>
 	<key>CFBundleExecutable</key>
@@ -41,8 +54,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>

@@ -224,14 +224,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "16.2.5"
-  heic_to_png_jpg:
-    dependency: "direct main"
-    description:
-      name: heic_to_png_jpg
-      sha256: cd4038a1b194c70d0a665e85a8d32a7b7a0d554baa5f0fe833f8cafbb0c7b792
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.5"
   heif_converter:
     dependency: "direct main"
     description:
@@ -256,14 +248,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
-  image:
-    dependency: transitive
-    description:
-      name: image
-      sha256: "4e973fcf4caae1a4be2fa0a13157aa38a8f9cb049db6529aa00b4d71abc4d928"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.5.4"
   image_gallery_saver_plus:
     dependency: "direct main"
     description:

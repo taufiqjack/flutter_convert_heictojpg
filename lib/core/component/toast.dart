@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-void toast(ctx, String text) async {
+void toast(BuildContext ctx, String text) async {
   FToast fToast = FToast();
   fToast.init(ctx);
   fToast.showToast(

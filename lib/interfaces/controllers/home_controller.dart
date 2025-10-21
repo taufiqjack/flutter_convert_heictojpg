@@ -14,12 +14,18 @@ class HomeController extends State<HomeView> {
 
   File? heicFiles;
   FilePickerResult? result;
+  FilePickerResult? newResult;
   List<String> convertedPaths = [];
   dynamic pickImageError;
 
   String? convertPath;
   String? jpgPath;
   String? targetFile;
+
+  void removeItem(item) async {
+    result?.files.remove(item);
+    setState(() {});
+  }
 
   Future pickImageConvert() async {
     result = await FilePicker.platform.pickFiles(
@@ -33,6 +39,29 @@ class HomeController extends State<HomeView> {
       debugPrint('User canceled the picker.');
       return null;
     }
+
+    setState(() {});
+  }
+
+  Future pickImageOther() async {
+    newResult = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowMultiple: true,
+      allowedExtensions: ['heic', 'HEIC'],
+    );
+    debugPrint('list path ${result?.files.first.path}');
+
+    if (newResult == null || newResult?.files == null) {
+      debugPrint('User canceled the picker.');
+      return;
+    }
+    if (result != null || result!.files.isNotEmpty) {
+      debugPrint('User canceled the picker.');
+      result!.files.addAll(newResult!.files);
+    } else {
+      result = newResult;
+    }
+
     setState(() {});
   }
 
@@ -68,7 +97,7 @@ class HomeController extends State<HomeView> {
     } catch (e) {
       debugPrint('❌ Error: $e');
       if (mounted) {
-        toast(context, '$e');
+        toast(context, 'Please selected photos');
       }
       return [];
     }
@@ -97,7 +126,7 @@ class HomeController extends State<HomeView> {
     } catch (e) {
       debugPrint('❌ Error: $e');
       if (mounted) {
-        toast(context, '$e');
+        toast(context, 'Please selected photos');
       }
       return [];
     }

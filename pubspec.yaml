@@ -26,6 +26,7 @@ dependencies:
   any_image_view: ^1.6.0
   fluttertoast: ^9.0.0
   flutter_dotenv: ^6.0.0
+  dotted_border: ^3.1.0
 
 dev_dependencies:
   flutter_test:

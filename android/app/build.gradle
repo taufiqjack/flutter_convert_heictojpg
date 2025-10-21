@@ -76,6 +76,25 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
+
+             android.applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def date = new Date()
+                    if(output.getFilter(com.android.build.OutputFile.ABI) != null){
+                        outputFileName = "Photos_Converter-v${versionName}_${date.format('ddMMyyyy')}_${output.getFilter(com.android.build.OutputFile.ABI)}_${variant.name}.apk"
+                    }else{
+                        outputFileName = "Photos_Converter-v${versionName}_${date.format('ddMMyyyy')}_${variant.name}.apk"
+                    }
+                }
+                tasks.named("sign${variant.name.capitalize()}Bundle", com.android.build.gradle.internal.tasks.FinalizeBundleTask) {
+                    File file = finalBundleFile.asFile.get()
+            
+            
+                     def date = new Date()
+                    File finalFile = new File(file.parentFile, "Photos_Converter${variant.name}-v${versionName}+${versionCode}-${date.format('ddMMyyyy')}.aab")
+                    finalBundleFile.set(finalFile)
+                }
+            }
         }
     }
 }

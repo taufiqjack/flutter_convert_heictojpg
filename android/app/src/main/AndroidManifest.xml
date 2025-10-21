@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rencanggunung.flutter_convert_heictojpg">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
    <application
-        android:label="CONVERT HEIC to JPG"
+        android:label="CONVERT COMPRESS PHOTOS"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

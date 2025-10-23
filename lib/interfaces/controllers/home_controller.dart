@@ -21,6 +21,7 @@ class HomeController extends State<HomeView> {
   String? convertPath;
   String? jpgPath;
   String? targetFile;
+  String resultScan = "";
 
   void removeItem(item) async {
     result?.files.remove(item);
